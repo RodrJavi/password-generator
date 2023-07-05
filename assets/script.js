@@ -7,6 +7,7 @@ function generatePassword() {
   var upperCaseBoolean;
   var numbersBoolean;
   var specialCharactersBoolean;
+  
   //arrays to merge when creating password
   var lowerCaseCharacters = ["a", "b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
   var upperCaseCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -19,6 +20,7 @@ function generatePassword() {
     return length;
   }
   var passwordLength = getLength();
+
   //This function asks the series of prompts to get password parameters
   function getAllowedCharacters() {
     lowerCaseBoolean = window.confirm("Does this have lowercase letters?");
