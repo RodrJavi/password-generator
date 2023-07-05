@@ -36,7 +36,7 @@ function generatePassword() {
     let allowedCharacters = [];
     let newPassword = [];
     if (lowerCaseBoolean) {
-      allowedCharacters = [...allowedCharacters, ...lowerCaseCharacters]
+      allowedCharacters = [...allowedCharacters, ...lowerCaseCharacters];
     }
     else {
       
@@ -60,6 +60,8 @@ function generatePassword() {
       
     }
 
+    //safeguard for if all parameters are declined
+    if (allowedCharacters.length != 0){
     //newPassword is the final array with randomized letters from allowed characters
     for (let i=0; i < passwordLength; i++) {
       let randomNumber = Math.floor(Math.random() * allowedCharacters.length);
@@ -67,6 +69,10 @@ function generatePassword() {
     }
     //join method combines array indexes into a single string without commas
     passwordOutput = newPassword.join("");
+    }
+    else {
+      passwordOutput = "No criteria entered, try generating again!";
+    }
 
   }
 
